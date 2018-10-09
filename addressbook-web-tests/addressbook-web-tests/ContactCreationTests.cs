@@ -48,7 +48,6 @@ namespace WebAddressBookTests
 			ContactData contact = new ContactData("Natalia", "Filatova");
 			contact.Nickname = "lalala";
 			FillContactForm(contact);
-			Fill();
 			SubmitContactCreation();
 			Logout();
 		}
@@ -80,58 +79,6 @@ namespace WebAddressBookTests
 				driver.FindElement(By.Name("lastname")).SendKeys(contact.Lastname);
 				
 		}
-		private void Fill()
-		{
-			driver.FindElement(By.Name("title")).Clear();
-			driver.FindElement(By.Name("title")).SendKeys("1");
-			driver.FindElement(By.Name("photo")).SendKeys("C:\\temp\\111.jpg");
-			driver.FindElement(By.Name("title")).Click();
-			driver.FindElement(By.Name("title")).Clear();
-			driver.FindElement(By.Name("title")).SendKeys("aaa");
-			driver.FindElement(By.Name("company")).Click();
-			driver.FindElement(By.Name("company")).Clear();
-			driver.FindElement(By.Name("company")).SendKeys("bbb");
-			driver.FindElement(By.Name("address")).Click();
-			driver.FindElement(By.Name("address")).Clear();
-			driver.FindElement(By.Name("address")).SendKeys("ccc");
-			driver.FindElement(By.Name("theform")).Click();
-			driver.FindElement(By.Name("home")).Click();
-			driver.FindElement(By.Name("home")).Clear();
-			driver.FindElement(By.Name("home")).SendKeys("111");
-			driver.FindElement(By.Name("mobile")).Click();
-			driver.FindElement(By.Name("mobile")).Clear();
-			driver.FindElement(By.Name("mobile")).SendKeys("222");
-			driver.FindElement(By.Name("work")).Click();
-			driver.FindElement(By.Name("work")).Clear();
-			driver.FindElement(By.Name("work")).SendKeys("333");
-			driver.FindElement(By.Name("theform")).Click();
-			driver.FindElement(By.Name("fax")).Click();
-			driver.FindElement(By.Name("fax")).Clear();
-			driver.FindElement(By.Name("fax")).SendKeys("444");
-			driver.FindElement(By.Name("email")).Click();
-			driver.FindElement(By.Name("email")).Clear();
-			driver.FindElement(By.Name("email")).SendKeys("111@111.ru");
-			driver.FindElement(By.Name("bday")).Click();
-			new SelectElement(driver.FindElement(By.Name("bday"))).SelectByText("16");
-			driver.FindElement(By.Name("bday")).Click();
-			driver.FindElement(By.Name("bmonth")).Click();
-			new SelectElement(driver.FindElement(By.Name("bmonth"))).SelectByText("November");
-			driver.FindElement(By.Name("bmonth")).Click();
-			driver.FindElement(By.Name("byear")).Click();
-			driver.FindElement(By.Name("byear")).Clear();
-			driver.FindElement(By.Name("byear")).SendKeys("1990");
-			driver.FindElement(By.Name("theform")).Click();
-			driver.FindElement(By.Name("address2")).Click();
-			driver.FindElement(By.Name("address2")).Clear();
-			driver.FindElement(By.Name("address2")).SendKeys("123");
-			driver.FindElement(By.Name("phone2")).Click();
-			driver.FindElement(By.Name("phone2")).Clear();
-			driver.FindElement(By.Name("phone2")).SendKeys("321");
-			driver.FindElement(By.Name("notes")).Click();
-			driver.FindElement(By.Name("notes")).Clear();
-			driver.FindElement(By.Name("notes")).SendKeys("123456789");
-		}
-
 		private void SubmitContactCreation()
 		{
 			driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
