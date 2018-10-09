@@ -18,6 +18,7 @@ namespace WebAddressBookTests
 		protected LoginHelper loginHelper;
 		protected NavigationHelper navigationHelper;
 		protected GroupHelper groupHelper;
+		protected ContactHelper contactHelper;
 
 		[SetUp]
 		public void SetupTest()
@@ -28,6 +29,7 @@ namespace WebAddressBookTests
 			loginHelper = new LoginHelper(driver);
 			navigationHelper = new NavigationHelper(driver, baseURL);
 			groupHelper = new GroupHelper(driver);
+			contactHelper = new ContactHelper(driver);
 		}
 		[TearDown]
 		public void TeardownTest()
