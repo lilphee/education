@@ -19,6 +19,16 @@ namespace WebAddressBookTests
 			InitContactCreation();
 			FillContactForm(contact);
 			SubmitContactCreation();
+			manager.Navigator.GoToHomePage();
+			return this;
+		}
+
+		internal ContactHelper Modify(int p, ContactData newData)
+		{
+			InitContactModification(p);
+			FillContactForm(newData);
+			SubmitContactModification();
+			manager.Navigator.GoToHomePage();
 			return this;
 		}
 		public ContactHelper InitContactCreation()
@@ -38,7 +48,17 @@ namespace WebAddressBookTests
 		}
 		public ContactHelper SubmitContactCreation()
 		{
-			driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
+			driver.FindElement(By.Name("submit")).Click();
+			return this;
+		}
+		public ContactHelper InitContactModification(int index)
+		{
+			driver.FindElement(By.XPath("(//img[@alt='Edit'])[" + index + "]")).Click();
+			return this;
+		}
+		public ContactHelper SubmitContactModification()
+		{
+			driver.FindElement(By.Name("update")).Click();
 			return this;
 		}
 	}
