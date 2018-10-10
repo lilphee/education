@@ -22,11 +22,21 @@ namespace WebAddressBookTests
 
 		public ApplicationManager()
 		{
-		loginHelper = new LoginHelper(driver);
-		navigationHelper = new NavigationHelper(driver, baseURL);
-		groupHelper = new GroupHelper(driver);
-		contactHelper = new ContactHelper(driver);
-		logoutHelper = new LogoutHelper(driver);
+		driver = new FirefoxDriver();
+		baseURL = "http://localhost/";
+		loginHelper = new LoginHelper(this);
+		navigationHelper = new NavigationHelper(this, baseURL);
+		groupHelper = new GroupHelper(this);
+		contactHelper = new ContactHelper(this);
+		logoutHelper = new LogoutHelper(this);
+		}
+
+		public IWebDriver Driver
+		{
+			get
+			{
+				return driver;
+			}
 		}
 
 		public void Stop()
