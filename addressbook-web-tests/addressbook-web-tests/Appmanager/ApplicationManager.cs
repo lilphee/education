@@ -45,11 +45,11 @@ namespace WebAddressBookTests
 		}
 		public static ApplicationManager GetInstance()
 		{
-			if (!app.IsValueCreated)
+			if (! app.IsValueCreated)
 			{
 				ApplicationManager newInstance = new ApplicationManager();
 				newInstance.Navigator.GoToHomePage();
-				app.Value = new ApplicationManager();
+				app.Value = newInstance;
 			}
 			return app.Value;
 		}

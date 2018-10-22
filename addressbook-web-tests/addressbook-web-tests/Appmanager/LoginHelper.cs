@@ -39,6 +39,7 @@ namespace WebAddressBookTests
 			return IsLoggedIn()
 				&& driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text == "("+ account.Username+")";
 		}
+
 		public void Logout()
 		{
 			if (IsLoggedIn())
