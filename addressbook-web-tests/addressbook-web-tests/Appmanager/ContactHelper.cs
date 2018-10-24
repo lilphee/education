@@ -84,5 +84,10 @@ namespace WebAddressBookTests
 			driver.SwitchTo().Alert().Accept();
 			return this;
 		}
+
+		public bool ContactPresent()
+		{
+			return IsElementPresent(By.CssSelector("input[name=\"selected[]\"]"));
+		}
 	}
 }
