@@ -47,19 +47,24 @@ namespace WebAddressBookTests
 			{
 				return true;
 			}
-			return Firstname == other.Firstname && Lastname == other.Lastname;
+			return Lastname == other.Lastname && Firstname == other.Firstname;
 		}
-
 		public override int GetHashCode()
 		{
-			return Firstname.GetHashCode();
+			return 0;
 		}
-
 		public override string ToString()
 		{
-			return "firstname and lastname=" + Firstname && Lastname;
+			return "firstname = " + Firstname + " lastname = "+ Lastname;
 		}
-
+		public int CompareTo(ContactData other)
+		{
+			if (object.ReferenceEquals(other, null))
+			{
+				return 1;
+			}
+			return Firstname.CompareTo(other.Firstname) + Lastname.CompareTo(other.Lastname);
+		}
 		public string Firstname
 		{
 			get

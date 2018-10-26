@@ -98,7 +98,7 @@ namespace WebAddressBookTests
 			foreach (IWebElement element in elements)
 			{
 				var cells = element.FindElements(By.CssSelector("td"));
-				contacts.Add(new ContactData(cells[1].Text, cells[2].Text));
+				contacts.Add(new ContactData(cells[2].Text, cells[1].Text));
 			}
 			return contacts;
 		}
