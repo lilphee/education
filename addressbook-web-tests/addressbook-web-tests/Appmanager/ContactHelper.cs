@@ -89,5 +89,19 @@ namespace WebAddressBookTests
 		{
 			return IsElementPresent(By.CssSelector("input[name=\"selected[]\"]"));
 		}
+
+		public List<ContactData> GetContactList()
+		{
+			List<ContactData> contacts = new List<ContactData>();
+			manager.Navigator.GoToHomePage();
+			ICollection<IWebElement> elements = driver.FindElements(By.Name("entry")); 
+			foreach (IWebElement element in elements)
+			{
+				var cells = element.FindElements(By.CssSelector("td"));
+				contacts.Add(new ContactData(cells[1].Text, cells[2].Text));
+			}
+			return contacts;
+		}
+
 	}
 }
