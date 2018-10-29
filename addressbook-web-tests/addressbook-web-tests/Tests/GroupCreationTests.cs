@@ -50,15 +50,12 @@ namespace WebAddressBookTests
 		public void BadNameGroupCreationTest()
 		{
 			GroupData group = new GroupData("a'a");
-			group.Header = "aaa";
-			group.Footer = "bbb";
-
+			
 			List<GroupData> oldGroups = app.Groups.GetGroupList();
 
 			app.Groups.Create(group);
 
 			List<GroupData> newGroups = app.Groups.GetGroupList();
-			oldGroups.Add(group);
 			oldGroups.Sort();
 			newGroups.Sort();
 			Assert.AreEqual(oldGroups, newGroups);
