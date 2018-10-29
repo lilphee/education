@@ -30,12 +30,17 @@ namespace WebAddressBookTests
 		private string secaddress = "";
 		private string home = "";
 		private string notes = "";
-		
+
 		public ContactData(string firstname, string lastname)
 		{
-			this.firstname = firstname;
-			this.lastname = lastname;
+			Firstname = firstname;
+			Lastname = lastname;
 		}
+
+		public string Firstname { get; set; }
+		public string Lastname { get; set; }
+		public string Nickname { get; set; }
+		public string Id { get; set; }
 
 		public bool Equals(ContactData other)
 		{
@@ -55,7 +60,7 @@ namespace WebAddressBookTests
 		}
 		public override string ToString()
 		{
-			return "firstname = " + Firstname + " lastname = "+ Lastname;
+			return "firstname = " + Firstname + " lastname = " + Lastname;
 		}
 		public int CompareTo(ContactData other)
 		{
@@ -64,39 +69,6 @@ namespace WebAddressBookTests
 				return 1;
 			}
 			return Firstname.CompareTo(other.Firstname) + Lastname.CompareTo(other.Lastname);
-		}
-		public string Firstname
-		{
-			get
-			{
-				return firstname;
-			}
-			set
-			{
-				firstname = value;
-			}
-		}
-		public string Lastname
-		{
-			get
-			{
-				return lastname;
-			}
-			set
-			{
-				lastname = value;
-			}
-		}
-		public string Nickname
-		{
-			get
-			{
-				return nickname;
-			}
-			set
-			{
-				nickname = value;
-			}
 		}
 	}
 }
