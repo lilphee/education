@@ -62,13 +62,20 @@ namespace WebAddressBookTests
 		{
 			return "firstname = " + Firstname + " lastname = " + Lastname;
 		}
+		//Сравнивает текущий экземпляр с другим объектом того же типа и возвращает целое число, 
+		//которое показывает, расположен ли текущий экземпляр перед, после или на той же позиции в порядке сортировки, что и другой объект.
 		public int CompareTo(ContactData other)
 		{
+			//условие сравнения
 			if (object.ReferenceEquals(other, null))
 			{
 				return 1;
 			}
-			return Firstname.CompareTo(other.Firstname) + Lastname.CompareTo(other.Lastname);
+			if (Lastname.CompareTo(other.Lastname) == 0)
+			{
+				return Firstname.CompareTo(other.Firstname);
+			}
+			return Lastname.CompareTo(other.Lastname);
 		}
 	}
 }

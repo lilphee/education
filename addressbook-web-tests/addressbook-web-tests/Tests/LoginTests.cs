@@ -33,6 +33,8 @@ namespace WebAddressBookTests
 			AccountData account = new AccountData("admin", "123456");
 			app.Auth.Login(account);
 
+			System.Threading.Thread.Sleep(2000);
+
 			//verification
 			Assert.IsFalse(app.Auth.IsLoggedIn(account));
 		}

@@ -37,9 +37,12 @@ namespace WebAddressBookTests
 		{
 			return "name=" + Name;
 		}
+
+		//Сравнивает текущий экземпляр с другим объектом того же типа и возвращает целое число, 
+		//которое показывает, расположен ли текущий экземпляр перед, после или на той же позиции в порядке сортировки, что и другой объект.
 		public int CompareTo(GroupData other)
 		{
-			if (object.ReferenceEquals(other, null))
+			if (Object.ReferenceEquals(other, null))
 			{
 				return 1;
 			}
