@@ -8,6 +8,8 @@ namespace WebAddressBookTests
 {
 	public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
 	{
+		private string allPhones;
+
 		public ContactData(string firstname, string lastname)
 		{
 			Firstname = firstname;
@@ -21,9 +23,33 @@ namespace WebAddressBookTests
 		public string HomePhone { get; set; }
 		public string MobilePhone { get; set; }
 		public string Workphone { get; set; }
+		public string AllPhones
+		{
+			get
+			{ if (allPhones != null)
+				{
+					return allPhones;
+				}
+				else
+				{
+					return (CleanUp(HomePhone) + CleanUp(MobilePhone) + CleanUp(Workphone)).Trim();
+				}
+			}
+			set
+			{
+				allPhones = value;
+			}
+		}
 		public string Id { get; set; }
 
-
+		private string CleanUp(string phone)
+		{
+			if (phone == null || phone == "")
+			{
+				return "";
+			}
+			return phone.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "") + "\r\n";
+		}
 		public bool Equals(ContactData other)
 		{
 			if (Object.ReferenceEquals(other, null))
