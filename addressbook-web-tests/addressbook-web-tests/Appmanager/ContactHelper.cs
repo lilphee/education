@@ -8,6 +8,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
+using System.Text.RegularExpressions;
 
 namespace WebAddressBookTests
 {
@@ -33,6 +34,7 @@ namespace WebAddressBookTests
 			manager.Navigator.GoToHomePage();
 			return this;
 		}
+
 		public ContactHelper Remove(int v)
 		{
 			SelectContact(v);
@@ -137,7 +139,6 @@ namespace WebAddressBookTests
 				Workphone = workPhone
 			};
 		}
-
 		public ContactData GetContactInformationFromTable(int index)
 		{
 			manager.Navigator.GoToHomePage();
@@ -152,6 +153,35 @@ namespace WebAddressBookTests
 				Address = address,
 				AllPhones = allPhones,
 			};
+		}
+
+		public int GetNumberOfSearchResults()
+		{
+			manager.Navigator.GoToHomePage();
+			string text = driver.FindElement(By.TagName("label")).Text;
+			Match m = new Regex(@"\d+").Match(text);
+			return Int32.Parse(m.Value);
+		}
+
+		public ContactData GetContactInformationFromDetails(int index)
+		{
+			manager.Navigator.GoToHomePage();
+			GetContactDetails(0);
+			IList<IWebElement> content = driver.FindElement(By.Id("content"));
+			string allData = content.Text;
+
+			return new ContactData(firstName, lastName)
+			{
+				Address = address,
+				AllPhones = allPhones,
+			};
+
+		}
+
+		public ContactHelper GetContactDetails(int index)
+		{
+			driver.FindElement(By.XPath("(//img[@alt='Details'])[" + index + "]")).Click();
+			return this;
 		}
 	}
 }
