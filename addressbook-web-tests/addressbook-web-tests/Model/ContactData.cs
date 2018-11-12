@@ -10,6 +10,7 @@ namespace WebAddressBookTests
 	public class ContactData : IEquatable<ContactData>, IComparable<ContactData>
 	{
 		private string allPhones;
+		private string allEmails;
 
 		public ContactData(string firstname, string lastname)
 		{
@@ -17,10 +18,13 @@ namespace WebAddressBookTests
 			Lastname = lastname;
 		}
 
+		public string Id { get; set; }
 		public string Firstname { get; set; }
 		public string Lastname { get; set; }
 		public string Nickname { get; set; }
+
 		public string Address { get; set; }
+
 		public string HomePhone { get; set; }
 		public string MobilePhone { get; set; }
 		public string Workphone { get; set; }
@@ -33,7 +37,7 @@ namespace WebAddressBookTests
 				}
 				else
 				{
-					return (CleanUp(HomePhone) + CleanUp(MobilePhone) + CleanUp(Workphone)).Trim();
+					return (CleanUpPhone(HomePhone) + CleanUpPhone(MobilePhone) + CleanUpPhone(Workphone)).Trim();
 				}
 			}
 			set
@@ -41,35 +45,46 @@ namespace WebAddressBookTests
 				allPhones = value;
 			}
 		}
-
-		public string AllPhones
-		{
-			get
-			{
-				if (allPhones != null)
-				{
-					return allPhones;
-				}
-				else
-				{
-					return (CleanUp(HomePhone) + CleanUp(MobilePhone) + CleanUp(Workphone)).Trim();
-				}
-			}
-			set
-			{
-				allPhones = value;
-			}
-		}
-		public string Id { get; set; }
-
-		private string CleanUp(string phone)
+		private string CleanUpPhone(string phone)
 		{
 			if (phone == null || phone == "")
 			{
 				return "";
 			}
-			return Regex.Replace(phone, "[ -()]", "")+"\r\n";
+			return Regex.Replace(phone, "[ -()]", "") + "\r\n";
 		}
+
+		public string Email { get; set; }
+		public string Email2 { get; set; }
+		public string Email3 { get; set; }
+		public string AllEmails
+		{
+			get
+			{
+				if (allEmails!= null)
+				{
+					return allEmails;
+				}
+				else
+				{
+					return (CleanUpMail(Email)+ CleanUpMail(Email2) + CleanUpMail(Email3)).Trim();
+				}
+			}
+			set
+			{
+				allEmails = value;
+			}
+		}
+		private string CleanUpMail(string mail)
+		{
+			if (mail == null || mail == "")
+			{
+				return "";
+			}
+			return Regex.Replace(mail, "[ ]", "") + "\r\n";
+		}
+
+	
 		public bool Equals(ContactData other)
 		{
 			if (Object.ReferenceEquals(other, null))

@@ -131,12 +131,19 @@ namespace WebAddressBookTests
 			string mobilePhone = driver.FindElement(By.Name("mobile")).GetAttribute("value");
 			string workPhone = driver.FindElement(By.Name("work")).GetAttribute("value");
 
+			string email = driver.FindElement(By.Name("email")).GetAttribute("value");
+			string email2 = driver.FindElement(By.Name("email2")).GetAttribute("value");
+			string email3 = driver.FindElement(By.Name("email3")).GetAttribute("value");
+
 			return new ContactData(firstName, lastName)
 			{
 				Address = address,
 				HomePhone = homePhone,
 				MobilePhone = mobilePhone,
-				Workphone = workPhone
+				Workphone = workPhone,
+				Email = email,
+				Email2 = email2,
+				Email3 = email3
 			};
 		}
 		public ContactData GetContactInformationFromTable(int index)
@@ -146,12 +153,14 @@ namespace WebAddressBookTests
 			string lastName = cells[1].Text;
 			string firstName = cells[2].Text;
 			string address = cells[3].Text;
+			string allEmails = cells[4].Text;
 			string allPhones = cells[5].Text;
 
 			return new ContactData(firstName, lastName)
 			{
 				Address = address,
 				AllPhones = allPhones,
+				AllEmails = allEmails
 			};
 		}
 
@@ -163,25 +172,23 @@ namespace WebAddressBookTests
 			return Int32.Parse(m.Value);
 		}
 
-		public ContactData GetContactInformationFromDetails(int index)
-		{
-			manager.Navigator.GoToHomePage();
-			GetContactDetails(0);
-			IList<IWebElement> content = driver.FindElement(By.Id("content"));
-			string allData = content.Text;
+		//public ContactData GetContactInformationFromDetails(int index)
+		//{
+		//	manager.Navigator.GoToHomePage();
+		//	GetContactDetails(0);
+		//	IList<IWebElement> content = driver.FindElement(By.Id("content"));
+		//	string allData = content.Text;
 
-			return new ContactData(firstName, lastName)
-			{
-				Address = address,
-				AllPhones = allPhones,
-			};
+		//	return new ContactData(firstName, lastName)
+		//	{
+		//		Address = address,
+		//		AllPhones = allPhones,
+		//	};
 
-		}
-
-		public ContactHelper GetContactDetails(int index)
-		{
-			driver.FindElement(By.XPath("(//img[@alt='Details'])[" + index + "]")).Click();
-			return this;
-		}
+		//public ContactHelper GetContactDetails(int index)
+		//{
+		//	driver.FindElement(By.XPath("(//img[@alt='Details'])[" + index + "]")).Click();
+		//	return this;
+		//}
 	}
 }
