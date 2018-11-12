@@ -34,7 +34,6 @@ namespace WebAddressBookTests
 			manager.Navigator.GoToHomePage();
 			return this;
 		}
-
 		public ContactHelper Remove(int v)
 		{
 			SelectContact(v);
@@ -61,12 +60,11 @@ namespace WebAddressBookTests
 			contactCache = null;
 			return this;
 		}
-		public ContactHelper InitContactModification(int index)
+		public void InitContactModification(int index)
 		{
 			driver.FindElements(By.Name("entry"))[index]
 				.FindElements(By.TagName("td"))[7]
 				.FindElement(By.TagName("a")).Click();
-			return this;
 		}
 		public ContactHelper SubmitContactModification()
 		{
@@ -117,6 +115,11 @@ namespace WebAddressBookTests
 		public int GetContactCount()
 		{
 			return driver.FindElements(By.Name("entry")).Count;
+		}
+
+		public void GetContactDetails(int index)
+		{
+			driver.FindElement(By.XPath("(//img[@alt='Details'])[" + index + "]")).Click();
 		}
 
 		public ContactData GetContactInformationFromEditForm(int index)
@@ -171,24 +174,13 @@ namespace WebAddressBookTests
 			Match m = new Regex(@"\d+").Match(text);
 			return Int32.Parse(m.Value);
 		}
+		public ContactData GetContactInformationFromDetails(int index)
+		{
+			manager.Navigator.GoToHomePage();
+			GetContactDetails(0);
+			string allData = driver.FindElement(By.Id("content")).GetAttribute("value");
 
-		//public ContactData GetContactInformationFromDetails(int index)
-		//{
-		//	manager.Navigator.GoToHomePage();
-		//	GetContactDetails(0);
-		//	IList<IWebElement> content = driver.FindElement(By.Id("content"));
-		//	string allData = content.Text;
-
-		//	return new ContactData(firstName, lastName)
-		//	{
-		//		Address = address,
-		//		AllPhones = allPhones,
-		//	};
-
-		//public ContactHelper GetContactDetails(int index)
-		//{
-		//	driver.FindElement(By.XPath("(//img[@alt='Details'])[" + index + "]")).Click();
-		//	return this;
-		//}
+			return ???
+		}
 	}
 }
