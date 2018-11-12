@@ -174,13 +174,13 @@ namespace WebAddressBookTests
 			Match m = new Regex(@"\d+").Match(text);
 			return Int32.Parse(m.Value);
 		}
-		public ContactData GetContactInformationFromDetails(int index)
+		public string GetContactInformationFromDetails(int index)
 		{
 			manager.Navigator.GoToHomePage();
 			GetContactDetails(0);
 			string allData = driver.FindElement(By.Id("content")).GetAttribute("value");
 
-			return ???
+			return allData;
 		}
 	}
 }
