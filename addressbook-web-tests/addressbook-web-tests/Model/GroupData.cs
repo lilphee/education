@@ -35,7 +35,7 @@ namespace WebAddressBookTests
 		}
 		public override string ToString()
 		{
-			return "name=" + Name;
+			return "name=" + Name + "\nheader=" + Header + "\nfooter=" + Footer;
 		}
 
 		//Сравнивает текущий экземпляр с другим объектом того же типа и возвращает целое число, 
