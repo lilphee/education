@@ -1,2 +1,0 @@
-# education
-Software testing course

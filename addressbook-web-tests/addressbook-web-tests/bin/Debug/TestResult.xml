@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\userfobos\source\repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\addressbook-web-tests.dll" total="5" errors="0" failures="3" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2018-11-14" time="15:32:38">
+  <environment nunit-version="2.6.5.18109" clr-version="2.0.50727.8936" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Users\userfobos\source\repos\lilphee\education\addressbook-web-tests\packages\NUnit-2.6.5\bin" machine-name="DESKTOP-GD4V33I" user="userfobos" user-domain="DESKTOP-GD4V33I" />
+  <culture-info current-culture="ru-RU" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\userfobos\source\repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\addressbook-web-tests.dll" executed="True" result="Failure" success="False" time="21.600" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="WebAddressBookTests" executed="True" result="Failure" success="False" time="21.599" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="GroupCreationTests" executed="True" result="Failure" success="False" time="21.599" asserts="0">
+            <results>
+              <test-suite type="ParameterizedTest" name="GroupCreationTest" executed="True" result="Failure" success="False" time="21.598" asserts="0">
+                <results>
+                  <test-case name="WebAddressBookTests.GroupCreationTests.GroupCreationTest(name=y´.ÅlFààë&quot;\&#xA;header=áí%áÂëOÑéç¹+-Z4eE½Yqo£=NT4Akð!¶N¥Ùa\øGàô&quot;ÄNnoP§òDsâk| rµÒNéÁi3®e ãI¿&#xA;footer=xHÂHPåÄ[¦ÂýÜbkZ|aG¦EøöS¸° )Ï)" executed="True" result="Failure" success="False" time="16.391" asserts="1">
+                    <failure>
+                      <message><![CDATA[  Expected: 34
+  But was:  33
+]]></message>
+                      <stack-trace><![CDATA[at WebAddressBookTests.GroupCreationTests.GroupCreationTest(GroupData group) in C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\Tests\GroupCreationTests.cs:line 35
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="WebAddressBookTests.GroupCreationTests.GroupCreationTest(name=qç°ËK?CïB&#xA;header=.òcþkWkùfç¼RPËôÓØ°ÜôîUÚm07L7Ê%Õ7&amp;´TmzT/åpóúsN&lt;¼ó9$.DýFTÍOù&lt;æ;J8À{Í)Ê&#xA;footer=y&lt;Øèp.áý&quot;¦0oS aZìnÜ.~Ñ[µ^6F¬úc¹¥¯8óe¨.ÿ$=G°8)" executed="True" result="Success" success="True" time="1.424" asserts="2" />
+                  <test-case name="WebAddressBookTests.GroupCreationTests.GroupCreationTest(name={Q&lt;|­&#xA;header=9j{»Ð}»q'cvÉ£çmôc`Ý)aªÊÛ2º¹|Þå,Y&#xA;footer=Ívéí]¢hË@NZn¨?\Ø=Ïb×ÀÒ&gt;½Â&quot;ôH}j,:ö+v&quot;ZÀ¡PF@'É\)" executed="True" result="Failure" success="False" time="0.504" asserts="1">
+                    <failure>
+                      <message><![CDATA[  Expected: 35
+  But was:  34
+]]></message>
+                      <stack-trace><![CDATA[at WebAddressBookTests.GroupCreationTests.GroupCreationTest(GroupData group) in C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\Tests\GroupCreationTests.cs:line 35
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="WebAddressBookTests.GroupCreationTests.GroupCreationTest(name=¿-£jÏßfÖ÷ÐïÝyHQ:¡bVVýíT&#xA;header=B³/l-rÀ¦z{¾Ë±ríÌrî¤®Æu}ÖnkákdÞ!Õ=ádOlÕÛ·;F£ÃmeÎ4æ%hCîV$uÄ76¼¼¯Ï.¾ÈöªPÙ&#xA;footer=ãýf&amp;É;X8)" executed="True" result="Success" success="True" time="2.061" asserts="2" />
+                  <test-case name="WebAddressBookTests.GroupCreationTests.GroupCreationTest(name=A`6Ñ:7 %©æ'Ú¦m&#xA;header=Ô.½ó5C@w~1 Ò¡Wì~kËd±v¥¦ò,*ØHS³*ÛMKò±Ã¸Öd¢cf H&#xA;footer=Ë)" executed="True" result="Failure" success="False" time="1.144" asserts="1">
+                    <failure>
+                      <message><![CDATA[  Expected: 36
+  But was:  35
+]]></message>
+                      <stack-trace><![CDATA[at WebAddressBookTests.GroupCreationTests.GroupCreationTest(GroupData group) in C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\Tests\GroupCreationTests.cs:line 35
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
