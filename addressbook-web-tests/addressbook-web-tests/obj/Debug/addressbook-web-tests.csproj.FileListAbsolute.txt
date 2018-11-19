@@ -18,3 +18,5 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\WebDriver.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\WebDriver.Support.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\groups.csv
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.csprojAssemblyReference.cache
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\groups.xml
