@@ -20,45 +20,77 @@ namespace addressbook_test_data_generators
 			int count = Convert.ToInt32(args[0]);
 			string filename = args[1];
 			string format = args[2];
+			string type = args[3];
 
-			List<GroupData> groups = new List<GroupData>();
-
-			for (int i = 0; i < count; i++)
+			if (type == "groups")
 			{
-				groups.Add(new GroupData(TestBase.GenerateRandomString(10))
+				List<GroupData> groups = new List<GroupData>();
+				for (int i = 0; i < count; i++)
 				{
-					Header = TestBase.GenerateRandomString(10),
-					Footer = TestBase.GenerateRandomString(10)
-				});
-			}
-			if (format == "excel")
-			{
-				writeGroupsToExcelFile(groups, filename);
-			}
-			else
-			{
-				StreamWriter writer = new StreamWriter(args[1]);
-				if (format == "csv")
-				{
-					writeGroupsToCsvFile(groups, writer);
+					groups.Add(new GroupData(TestBase.GenerateRandomString(10))
+					{
+						Header = TestBase.GenerateRandomString(10),
+						Footer = TestBase.GenerateRandomString(10)
+					});
 				}
-				else if (format == "xml")
+				if (format == "excel")
 				{
-					writeGroupsToXmlFile(groups, writer);
-				}
-				else if (format == "json")
-				{
-					writeGroupsToJsonFile(groups, writer);
+					writeGroupsToExcelFile(groups, filename);
 				}
 				else
 				{
-					System.Console.Out.Write("unrecognized format" + format);
+					StreamWriter writer = new StreamWriter(args[1]);
+					if (format == "csv")
+					{
+						writeGroupsToCsvFile(groups, writer);
+					}
+					else if (format == "xml")
+					{
+						writeGroupsToXmlFile(groups, writer);
+					}
+					else if (format == "json")
+					{
+						writeGroupsToJsonFile(groups, writer);
+					}
+					else
+					{
+						System.Console.Out.Write("unrecognized format" + format);
+					}
+					writer.Close();
 				}
-				writer.Close();
-			}
-	
-		}
 
+			}
+
+			else if (type == "contacts")
+			{
+				List<ContactData> contacts = new List<ContactData>();
+
+				for (int i = 0; i < count; i++)
+				{
+					contacts.Add(new ContactData(TestBase.GenerateRandomString(10), TestBase.GenerateRandomString(10))
+					{
+						Nickname = TestBase.GenerateRandomString(10),
+						Address = TestBase.GenerateRandomString(20)
+					});
+				}
+
+				StreamWriter writer = new StreamWriter(args[1]);
+					if (format == "xml")
+					{
+						writeContactsToXmlFile(contacts, writer);
+					}
+					else if (format == "json")
+					{
+						writeContactsToJsonFile(contacts, writer);
+					}
+					else
+					{
+						System.Console.Out.Write("unrecognized format" + format);
+					}
+					writer.Close();
+			}
+			
+		}
 		static void writeGroupsToCsvFile(List<GroupData> groups, StreamWriter writer)
 		{
 			foreach (GroupData group in groups)
@@ -68,12 +100,10 @@ namespace addressbook_test_data_generators
 			}
 
 		}
-
 		static void writeGroupsToXmlFile(List<GroupData> groups, StreamWriter writer)
 		{
 			new XmlSerializer(typeof(List<GroupData>)).Serialize(writer, groups);
 		}
-
 		static void writeGroupsToJsonFile(List<GroupData> groups, StreamWriter writer)
 		{
 			writer.Write(JsonConvert.SerializeObject(groups, Newtonsoft.Json.Formatting.Indented));
@@ -101,6 +131,15 @@ namespace addressbook_test_data_generators
 			wb.Close();
 			app.Visible = false;
 			app.Quit();
+		}
+
+		static void writeContactsToXmlFile(List<ContactData> contacts, StreamWriter writer)
+		{
+			new XmlSerializer(typeof(List<ContactData>)).Serialize(writer, contacts);
+		}
+		static void writeContactsToJsonFile(List<ContactData> contacts, StreamWriter writer)
+		{
+			writer.Write(JsonConvert.SerializeObject(contacts, Newtonsoft.Json.Formatting.Indented));
 		}
 	}
 }

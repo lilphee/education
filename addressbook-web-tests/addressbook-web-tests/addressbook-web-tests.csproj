@@ -88,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BaseDiagram.cd" />
+    <None Include="contacts.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="groups.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

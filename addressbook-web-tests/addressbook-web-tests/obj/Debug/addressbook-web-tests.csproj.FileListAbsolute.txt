@@ -23,3 +23,5 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\groups.json
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.csproj.ResolveComReference.cache
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.csprojAssemblyReference.cache
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\bin\Debug\contacts.json
