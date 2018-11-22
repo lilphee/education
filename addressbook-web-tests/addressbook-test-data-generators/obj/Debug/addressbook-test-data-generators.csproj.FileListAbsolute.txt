@@ -20,3 +20,4 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\Newtonsoft.Json.dll
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\Newtonsoft.Json.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\groups.json
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\obj\Debug\addressbook-test-data-generators.csproj.ResolveComReference.cache
