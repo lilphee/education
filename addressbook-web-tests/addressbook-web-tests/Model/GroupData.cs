@@ -27,6 +27,16 @@ namespace WebAddressBookTests
 		[Column(Name = "group_id"), PrimaryKey, Identity]
 		public string Id { get; set; }
 
+		public static List<GroupData> GetAll() {
+			using (AddressBookDB db = new AddressBookDB())
+			{
+				return (from g in db.Groups select g).ToList();
+			}
+		}
+		
+
+
+
 		public bool Equals(GroupData other)
 		{
 			if (Object.ReferenceEquals(other, null))
