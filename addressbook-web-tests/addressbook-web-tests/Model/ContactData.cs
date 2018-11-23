@@ -97,6 +97,17 @@ namespace WebAddressBookTests
 			return Regex.Replace(mail, "[ ]", "") + "\r\n";
 		}
 
+		public ContactData()
+		{
+		}
+		public static List<ContactData> GetAll()
+		{
+			using (AddressBookDB db = new AddressBookDB())
+			{
+				return (from g in db.Contacts select g).ToList();
+			}
+		}
+
 		public string AllData
 		{
 			get

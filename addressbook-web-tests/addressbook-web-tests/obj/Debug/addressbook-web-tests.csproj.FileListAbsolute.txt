@@ -31,3 +31,4 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.csproj.CopyComplete
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.dll
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.pdb
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-web-tests\obj\Debug\addressbook-web-tests.csprojAssemblyReference.cache
