@@ -57,7 +57,7 @@ namespace WebAddressBookTests
 		{
 			List<GroupData> groups = new List<GroupData>();
 			Excel.Application app = new Excel.Application();
-			Excel.Workbook wb = app.Workbooks.Open(Path.Combine(Directory.GetCurrentDirectory(), @"groups.xlsx"));
+			Excel.Workbook wb = app.Workbooks.Open(Path.Combine(TestContext.CurrentContext.TestDirectory, @"groups.xlsx"));
 			Excel.Worksheet sheet = wb.ActiveSheet;
 			Excel.Range range = sheet.UsedRange;
 			for (int i = 1; i <= range.Rows.Count; i++)
