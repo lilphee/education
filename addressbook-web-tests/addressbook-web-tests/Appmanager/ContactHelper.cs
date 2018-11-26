@@ -42,6 +42,15 @@ namespace WebAddressBookTests
 			manager.Navigator.GoToHomePage();
 			return this;
 		}
+
+		public ContactHelper Remove (ContactData contact)
+		{
+			SelectContact(contact.Id);
+			InitContactRemoval();
+			SubmitContactRemoval();
+			manager.Navigator.GoToHomePage();
+			return this;
+		}
 		public ContactHelper AddContactToGroup(ContactData contact, GroupData group)
 		{
 			manager.Navigator.GoToHomePage();
@@ -124,6 +133,7 @@ namespace WebAddressBookTests
 			contactCache = null;
 			return this;
 		}
+
 
 		public bool ContactPresent()
 		{
