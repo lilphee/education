@@ -15,6 +15,9 @@ namespace WebAddressBookTests
 		private string allEmails;
 		private string allData;
 
+		public ContactData()
+		{
+		}
 		public ContactData(string firstname, string lastname)
 		{
 			Firstname = firstname;
@@ -38,6 +41,7 @@ namespace WebAddressBookTests
 		public string MobilePhone { get; set; }
 		[Column(Name = "work")]
 		public string Workphone { get; set; }
+
 		public string AllPhones
 		{
 			get
@@ -97,9 +101,7 @@ namespace WebAddressBookTests
 			return Regex.Replace(mail, "[ ]", "") + "\r\n";
 		}
 
-		public ContactData()
-		{
-		}
+
 		public static List<ContactData> GetAll()
 		{
 			using (AddressBookDB db = new AddressBookDB())

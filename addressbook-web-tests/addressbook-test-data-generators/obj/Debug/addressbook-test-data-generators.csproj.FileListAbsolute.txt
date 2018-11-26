@@ -20,7 +20,6 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\linq2db.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\MySql.Data.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\Newtonsoft.Json.xml
-C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\nunit.framework.pdb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\nunit.framework.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\WebDriver.xml
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\obj\Debug\addressbook-test-data-generators.csprojAssemblyReference.cache
