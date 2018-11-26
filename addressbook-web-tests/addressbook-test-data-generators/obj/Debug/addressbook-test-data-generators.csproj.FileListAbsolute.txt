@@ -28,3 +28,5 @@ C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\obj\Debug\addressbook-test-data-generators.exe
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\obj\Debug\addressbook-test-data-generators.pdb
 C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\groups.xlsx
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\WebDriver.Support.dll
+C:\Users\userfobos\Source\Repos\lilphee\education\addressbook-web-tests\addressbook-test-data-generators\bin\Debug\WebDriver.Support.xml
