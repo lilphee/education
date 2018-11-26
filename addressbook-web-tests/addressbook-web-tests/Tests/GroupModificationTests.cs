@@ -16,7 +16,7 @@ namespace WebAddressBookTests
 		{
 			GroupData groupToModify = new GroupData("grouptomodify");
 
-			GroupData newData = new GroupData("abc");
+			GroupData newData = new GroupData("qwerty");
 			newData.Header = null;
 			newData.Footer = null;
 
@@ -25,15 +25,16 @@ namespace WebAddressBookTests
 				app.Groups.Create(groupToModify);
 			}
 
-			List<GroupData> oldGroups = app.Groups.GetGroupList();
+			List<GroupData> oldGroups = GroupData.GetAll();
 			GroupData oldData = oldGroups[0];
 
 			app.Groups.Modify(0, newData);
 
 			Assert.AreEqual(oldGroups.Count, app.Groups.GetGroupCount());
 
-			List<GroupData> newGroups = app.Groups.GetGroupList();
+			List <GroupData> newGroups = GroupData.GetAll();
 			oldGroups[0].Name = newData.Name;
+
 			oldGroups.Sort();
 			newGroups.Sort();
 			Assert.AreEqual(oldGroups, newGroups);

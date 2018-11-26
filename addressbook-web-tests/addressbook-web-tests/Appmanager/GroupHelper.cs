@@ -30,6 +30,7 @@ namespace WebAddressBookTests
 			InitGroupModification();
 			FillGroupForm(newData);
 			SubmitGroupModification();
+			new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(d => d.FindElements(By.CssSelector("div.msgbox")).Count > 0);
 			ReturnToGroupsPage();
 			return this;
 		}
