@@ -26,6 +26,7 @@ namespace WebAddressBookTests
 			manager.Navigator.GoToHomePage();
 			return this;
 		}
+
 		public ContactHelper Modify(int p, ContactData newData)
 		{
 			InitContactModification(p);
